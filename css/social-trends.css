@@ -1,0 +1,438 @@
+/* Social Trends Page Styles */
+.social-trends-page {
+    padding-top: 60px;
+    background: #f8f9fa;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 80vh;
+    padding: 4rem 5%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.trending-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.trending-tag i {
+    color: #ff4757;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.hero-content {
+    max-width: 800px;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+.platform-icons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.platform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.platform i {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.platform:hover i {
+    transform: translateY(-5px);
+}
+
+.trend-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.stat-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Trending Topics */
+.trending-topics {
+    padding: 4rem 5%;
+    background: white;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.topic-card {
+    padding: 2rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.topic-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.topic-header i {
+    font-size: 2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.topic-tag {
+    padding: 0.25rem 0.75rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.topic-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.topic-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Platform Trends */
+.platform-trends {
+    padding: 4rem 5%;
+    color: white;
+}
+
+.platform-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.platform-tab {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.platform-tab.active {
+    background: white;
+    color: var(--primary-color);
+}
+
+.platform-tab i {
+    font-size: 1.2rem;
+}
+
+.trend-list {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.trend-list.active {
+    display: grid;
+}
+
+.trend-item {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.trend-preview {
+    position: relative;
+    height: 200px;
+}
+
+.trend-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trend-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.trend-item:hover .trend-overlay {
+    opacity: 1;
+}
+
+.trend-overlay i {
+    font-size: 3rem;
+    color: white;
+}
+
+.trend-info {
+    padding: 1.5rem;
+}
+
+.trend-engagement {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    color: #666;
+}
+
+/* Influencer Spotlight */
+.influencer-spotlight {
+    padding: 4rem 5%;
+    background: white;
+}
+
+.influencer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.influencer-card {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.influencer-cover {
+    position: relative;
+    height: 150px;
+}
+
+.influencer-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.influencer-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.influencer-info {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    margin-top: -50px;
+}
+
+.influencer-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    border: 5px solid white;
+    overflow: hidden;
+}
+
+.influencer-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.influencer-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.stat span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.25rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Trend Prediction */
+.trend-prediction {
+    padding: 4rem 5%;
+    color: white;
+}
+
+.prediction-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.prediction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.prediction-item {
+    text-align: center;
+}
+
+.prediction-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, white, rgba(255, 255, 255, 0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    padding: 4rem 5%;
+    background: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .trend-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .platform-icons {
+        gap: 1rem;
+    }
+
+    .trend-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .platform-tabs {
+        gap: 0.5rem;
+    }
+
+    .platform-tab {
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .platform-icons {
+        flex-wrap: wrap;
+    }
+
+    .platform {
+        width: calc(50% - 1rem);
+    }
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An ninh số - Digital Media Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/digital-security.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+
+    <header class="header glass-effect">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class="gradient-text">
+                    <span>Digital</span>Media
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="digital-content.html">Nội dung số</a></li>
+                <li><a href="social-trends.html">Xu hướng MXH</a></li>
+                <li><a href="technology.html">Công nghệ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="digital-security-page">
+        <section class="hero-section gradient-bg">
+            <div class="hero-content">
+                <h1 class="gradient-text fade-in-up">An ninh số</h1>
+                <p class="fade-in-up">Bảo vệ thông tin và quyền riêng tư của bạn trong thế giới số</p>
+                <div class="security-stats glass-effect fade-in-up">
+                    <div class="stat-item">
+                        <span class="counter">70%</span>
+                        <p>Người dùng gặp vấn đề bảo mật</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="counter">85%</span>
+                        <p>Có thể phòng tránh</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="counter">24/7</span>
+                        <p>Hỗ trợ bảo mật</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="security-threats">
+            <div class="container">
+                <h2 class="section-title gradient-text">Các mối đe dọa phổ biến</h2>
+                <div class="threats-grid">
+                    <div class="threat-card glass-effect hover-lift">
+                        <div class="threat-icon">
+                            <i class="fas fa-virus"></i>
+                        </div>
+                        <h3>Malware</h3>
+                        <p>Phần mềm độc hại có thể đánh cắp thông tin hoặc phá hoại hệ thống</p>
+                        <a href="#" class="learn-more">Tìm hiểu thêm <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="threat-card glass-effect hover-lift">
+                        <div class="threat-icon">
+                            <i class="fas fa-fishing-hook"></i>
+                        </div>
+                        <h3>Phishing</h3>
+                        <p>Lừa đảo trực tuyến nhằm đánh cắp thông tin cá nhân</p>
+                        <a href="#" class="learn-more">Tìm hiểu thêm <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="threat-card glass-effect hover-lift">
+                        <div class="threat-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <h3>Identity Theft</h3>
+                        <p>Đánh cắp và lạm dụng thông tin định danh cá nhân</p>
+                        <a href="#" class="learn-more">Tìm hiểu thêm <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="threat-card glass-effect hover-lift">
+                        <div class="threat-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Ransomware</h3>
+                        <p>Mã độc tống tiền, mã hóa dữ liệu để đòi tiền chuộc</p>
+                        <a href="#" class="learn-more">Tìm hiểu thêm <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="security-checker gradient-bg">
+            <div class="container">
+                <div class="checker-content glass-effect">
+                    <h2>Kiểm tra mức độ bảo mật</h2>
+                    <p>Đánh giá nhanh mức độ an toàn của tài khoản của bạn</p>
+                    <form id="securityCheckerForm" class="modern-form">
+                        <div class="form-group">
+                            <input type="email" id="email" required>
+                            <label for="email">Email của bạn</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" required>
+                            <label for="password">Mật khẩu mẫu</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-meter">
+                                <div class="meter-bar"></div>
+                            </div>
+                            <span class="strength-text">Độ mạnh mật khẩu</span>
+                        </div>
+                        <button type="submit" class="modern-button ripple-button">
+                            Kiểm tra ngay
+                            <i class="fas fa-shield-alt"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="security-tips">
+            <div class="container">
+                <h2 class="section-title">Biện pháp bảo vệ</h2>
+                <div class="tips-grid">
+                    <div class="tip-card hover-lift">
+                        <div class="tip-number">01</div>
+                        <h3>Mật khẩu mạnh</h3>
+                        <p>Sử dụng mật khẩu phức tạp, kết hợp chữ, số và ký tự đặc biệt</p>
+                        <ul class="tip-list">
+                            <li>Ít nhất 12 ký tự</li>
+                            <li>Kết hợp chữ hoa và chữ thường</li>
+                            <li>Thêm số và ký tự đặc biệt</li>
+                            <li>Không sử dụng thông tin cá nhân</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card hover-lift">
+                        <div class="tip-number">02</div>
+                        <h3>Xác thực 2 lớp</h3>
+                        <p>Bật xác thực hai lớp cho tất cả tài khoản quan trọng</p>
+                        <ul class="tip-list">
+                            <li>Sử dụng ứng dụng xác thực</li>
+                            <li>Bảo vệ email và tài khoản ngân hàng</li>
+                            <li>Cập nhật thông tin liên hệ</li>
+                            <li>Lưu mã dự phòng</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card hover-lift">
+                        <div class="tip-number">03</div>
+                        <h3>Cập nhật phần mềm</h3>
+                        <p>Luôn cập nhật hệ điều hành và phần mềm bảo mật</p>
+                        <ul class="tip-list">
+                            <li>Bật tự động cập nhật</li>
+                            <li>Kiểm tra định kỳ</li>
+                            <li>Cài đặt từ nguồn chính thống</li>
+                            <li>Gỡ bỏ phần mềm không cần thiết</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="security-tools">
+            <div class="container">
+                <h2 class="section-title gradient-text">Công cụ bảo mật</h2>
+                <div class="tools-grid">
+                    <div class="tool-card glass-effect">
+                        <img src="images/antivirus.jpg" alt="Antivirus">
+                        <div class="tool-content">
+                            <h3>Phần mềm diệt virus</h3>
+                            <p>Bảo vệ máy tính khỏi malware và virus</p>
+                            <div class="tool-features">
+                                <span><i class="fas fa-check"></i> Quét realtime</span>
+                                <span><i class="fas fa-check"></i> Tường lửa</span>
+                                <span><i class="fas fa-check"></i> Chống ransomware</span>
+                            </div>
+                            <a href="#" class="modern-button outline-button">Tải về</a>
+                        </div>
+                    </div>
+                    <div class="tool-card glass-effect">
+                        <img src="images/password-manager.jpg" alt="Password Manager">
+                        <div class="tool-content">
+                            <h3>Quản lý mật khẩu</h3>
+                            <p>Lưu trữ và tạo mật khẩu mạnh</p>
+                            <div class="tool-features">
+                                <span><i class="fas fa-check"></i> Mã hóa AES-256</span>
+                                <span><i class="fas fa-check"></i> Sinh mật khẩu</span>
+                                <span><i class="fas fa-check"></i> Đồng bộ đa thiết bị</span>
+                            </div>
+                            <a href="#" class="modern-button outline-button">Tải về</a>
+                        </div>
+                    </div>
+                    <div class="tool-card glass-effect">
+                        <img src="images/vpn.jpg" alt="VPN">
+                        <div class="tool-content">
+                            <h3>VPN An toàn</h3>
+                            <p>Bảo vệ kết nối internet của bạn</p>
+                            <div class="tool-features">
+                                <span><i class="fas fa-check"></i> Mã hóa end-to-end</span>
+                                <span><i class="fas fa-check"></i> Không lưu log</span>
+                                <span><i class="fas fa-check"></i> Servers toàn cầu</span>
+                            </div>
+                            <a href="#" class="modern-button outline-button">Tải về</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="security-alerts">
+            <div class="container">
+                <h2 class="section-title">Cảnh báo bảo mật mới nhất</h2>
+                <div class="alerts-timeline">
+                    <div class="alert-item glass-effect">
+                        <div class="alert-date">
+                            <span class="day">29</span>
+                            <span class="month">Mar</span>
+                        </div>
+                        <div class="alert-content">
+                            <h3>Phát hiện malware mới trên Android</h3>
+                            <p>Malware mới có khả năng đánh cắp thông tin ngân hàng đang lây lan qua các ứng dụng giả mạo</p>
+                            <div class="alert-tags">
+                                <span class="tag">Android</span>
+                                <span class="tag">Malware</span>
+                                <span class="tag">Banking</span>
+                            </div>
+                        </div>
+                        <a href="#" class="alert-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="alert-item glass-effect">
+                        <div class="alert-date">
+                            <span class="day">28</span>
+                            <span class="month">Mar</span>
+                        </div>
+                        <div class="alert-content">
+                            <h3>Lỗ hổng nghiêm trọng trong Windows</h3>
+                            <p>Microsoft phát hành bản vá khẩn cấp cho lỗ hổng bảo mật nghiêm trọng</p>
+                            <div class="alert-tags">
+                                <span class="tag">Windows</span>
+                                <span class="tag">Security</span>
+                                <span class="tag">Update</span>
+                            </div>
+                        </div>
+                        <a href="#" class="alert-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="emergency-support gradient-bg">
+            <div class="container">
+                <div class="support-content glass-effect">
+                    <h2>Hỗ trợ khẩn cấp 24/7</h2>
+                    <p>Đội ngũ chuyên gia sẵn sàng hỗ trợ khi bạn gặp sự cố</p>
+                    <div class="support-channels">
+                        <a href="tel:1900xxxx" class="support-channel hover-lift">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Hotline</span>
+                        </a>
+                        <a href="#" class="support-channel hover-lift">
+                            <i class="fas fa-comments"></i>
+                            <span>Live Chat</span>
+                        </a>
+                        <a href="mailto:support@digital.com" class="support-channel hover-lift">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer gradient-bg">
+        <div class="footer-content">
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Về chúng tôi</h3>
+                <p>Digital Media Portal - Cổng thông tin truyền thông số hàng đầu Việt Nam</p>
+            </div>
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="privacy.html">Chính sách bảo mật</a></li>
+                    <li><a href="terms.html">Điều khoản sử dụng</a></li>
+                    <li><a href="advertise.html">Quảng cáo</a></li>
+                </ul>
+            </div>
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Kết nối với chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#" class="hover-lift"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Media Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/digital-security.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Digital Media Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+
+    <header class="header glass-effect">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class="gradient-text">
+                    <span>Digital</span>Media
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="digital-content.html">Nội dung số</a></li>
+                <li><a href="social-trends.html">Xu hướng MXH</a></li>
+                <li><a href="technology.html">Công nghệ</a></li>
+                <li><a href="blog.html"  class="active">Blog</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="blog-page">
+        <section class="blog-hero gradient-bg">
+            <div class="hero-content fade-in-up">
+                <h1 class="gradient-text">Blog & Chia sẻ</h1>
+                <p>Khám phá những bài viết chuyên sâu về công nghệ, truyền thông và giải trí</p>
+                <div class="hero-search glass-effect">
+                    <input type="text" placeholder="Tìm kiếm bài viết...">
+                    <button class="search-btn ripple-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-posts">
+            <div class="container">
+                <h2 class="section-title gradient-text">Bài viết nổi bật</h2>
+                <div class="featured-grid">
+                    <article class="featured-post main hover-lift">
+                        <div class="post-image image-hover">
+                            <img src="images/featured-blog.jpg" alt="Featured Post">
+                            <div class="post-category">Công nghệ</div>
+                        </div>
+                        <div class="post-content glass-effect">
+                            <h3>Tương lai của AI trong năm 2025</h3>
+                            <p>Khám phá những xu hướng AI mới nhất và ảnh hưởng của chúng đến cuộc sống...</p>
+                            <div class="post-meta">
+                                <div class="author">
+                                    <img src="images/author-1.jpg" alt="Author">
+                                    <span>John Doe</span>
+                                </div>
+                                <div class="post-info">
+                                    <span><i class="far fa-clock"></i> 5 phút đọc</span>
+                                    <span><i class="far fa-eye"></i> 1.2K views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="featured-sidebar">
+                        <article class="featured-post small hover-lift">
+                            <div class="post-image image-hover">
+                                <img src="images/blog-2.jpg" alt="Blog Post">
+                                <div class="post-category">Giải trí</div>
+                            </div>
+                            <div class="post-content">
+                                <h3>Top 10 phim Netflix 2025</h3>
+                                <div class="post-meta">
+                                    <span><i class="far fa-clock"></i> 3 phút đọc</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="featured-post small hover-lift">
+                            <div class="post-image image-hover">
+                                <img src="images/blog-3.jpg" alt="Blog Post">
+                                <div class="post-category">Social Media</div>
+                            </div>
+                            <div class="post-content">
+                                <h3>Xu hướng TikTok mới nhất</h3>
+                                <div class="post-meta">
+                                    <span><i class="far fa-clock"></i> 4 phút đọc</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-categories">
+            <div class="container">
+                <div class="categories-list">
+                    <button class="category-btn active ripple-button" data-category="all">
+                        Tất cả
+                    </button>
+                    <button class="category-btn ripple-button" data-category="tech">
+                        <i class="fas fa-microchip"></i> Công nghệ
+                    </button>
+                    <button class="category-btn ripple-button" data-category="entertainment">
+                        <i class="fas fa-film"></i> Giải trí
+                    </button>
+                    <button class="category-btn ripple-button" data-category="social">
+                        <i class="fas fa-share-alt"></i> Mạng xã hội
+                    </button>
+                    <button class="category-btn ripple-button" data-category="lifestyle">
+                        <i class="fas fa-heart"></i> Lifestyle
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-grid">
+            <div class="container">
+                <div class="grid-layout">
+                    <article class="blog-card hover-lift">
+                        <div class="card-image image-hover">
+                            <img src="images/blog-4.jpg" alt="Blog Post">
+                            <div class="post-category">Công nghệ</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>5 xu hướng công nghệ đáng chú ý</h3>
+                            <p>Khám phá những xu hướng công nghệ mới nhất đang định hình tương lai...</p>
+                            <div class="card-meta">
+                                <div class="author">
+                                    <img src="images/author-2.jpg" alt="Author">
+                                    <span>Jane Smith</span>
+                                </div>
+                                <div class="post-date">
+                                    <i class="far fa-calendar"></i>
+                                    <span>Mar 29, 2025</span>
+                                </div>
+                            </div>
+                            <a href="#" class="read-more">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- More blog cards will be dynamically loaded -->
+                </div>
+                <button class="load-more-btn modern-button ripple-button">
+                    <span>Xem thêm bài viết</span>
+                    <i class="fas fa-spinner fa-spin" style="display: none;"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="newsletter-section gradient-bg">
+            <div class="container">
+                <div class="newsletter-content glass-effect">
+                    <h2 class="gradient-text">Đăng ký nhận tin</h2>
+                    <p>Nhận những bài viết mới nhất và thông tin hữu ích về công nghệ, giải trí.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email của bạn" required>
+                            <button type="submit" class="modern-button ripple-button">
+                                Đăng ký ngay
+                            </button>
+                        </div>
+                        <div class="form-note">
+                            <i class="fas fa-shield-alt"></i>
+                            Chúng tôi tôn trọng quyền riêng tư của bạn
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <aside class="floating-share">
+            <button class="share-btn facebook hover-lift">
+                <i class="fab fa-facebook-f"></i>
+            </button>
+            <button class="share-btn twitter hover-lift">
+                <i class="fab fa-twitter"></i>
+            </button>
+            <button class="share-btn linkedin hover-lift">
+                <i class="fab fa-linkedin-in"></i>
+            </button>
+            <button class="scroll-top hover-lift">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </aside>
+    </main>
+
+    <footer class="footer gradient-bg">
+        <div class="footer-content">
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Về chúng tôi</h3>
+                <p>Digital Media Portal - Cổng thông tin truyền thông số hàng đầu Việt Nam</p>
+            </div>
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="privacy.html">Chính sách bảo mật</a></li>
+                    <li><a href="terms.html">Điều khoản sử dụng</a></li>
+                    <li><a href="advertise.html">Quảng cáo</a></li>
+                </ul>
+            </div>
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Kết nối với chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#" class="hover-lift"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Media Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>

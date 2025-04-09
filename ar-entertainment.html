@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải trí AR - Digital Media Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/ar-entertainment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+
+    <header class="header glass-effect">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class="gradient-text">
+                    <span>Digital</span>Media
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="digital-content.html">Nội dung số</a></li>
+                <li><a href="social-trends.html">Xu hướng MXH</a></li>
+                <li><a href="technology.html">Công nghệ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="ar-entertainment-page">
+        <section class="hero-section gradient-bg">
+            <div class="hero-content">
+                <h1 class="gradient-text fade-in-up">Khám phá thế giới AR</h1>
+                <p class="fade-in-up">Trải nghiệm giải trí tương tác thực tế tăng cường</p>
+                <div class="ar-buttons fade-in-up">
+                    <button class="modern-button ripple-button" id="startAR">
+                        <i class="fas fa-camera"></i>
+                        Bắt đầu trải nghiệm AR
+                    </button>
+                    <button class="modern-button outline-button" id="tutorialBtn">
+                        <i class="fas fa-play"></i>
+                        Xem hướng dẫn
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="ar-features">
+            <div class="container">
+                <h2 class="section-title gradient-text">Tính năng nổi bật</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-effect hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-mask"></i>
+                        </div>
+                        <h3>AR Filters</h3>
+                        <p>Bộ lọc AR độc đáo cho ảnh và video của bạn</p>
+                    </div>
+                    <div class="feature-card glass-effect hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>AR Games</h3>
+                        <p>Trò chơi tương tác với môi trường thực</p>
+                    </div>
+                    <div class="feature-card glass-effect hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3>3D Objects</h3>
+                        <p>Khám phá và tương tác với vật thể 3D</p>
+                    </div>
+                    <div class="feature-card glass-effect hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>AR Stories</h3>
+                        <p>Tạo và chia sẻ câu chuyện AR</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ar-experience" id="arExperience" style="display: none;">
+            <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+                <a-marker preset="hiro">
+                    <a-entity
+                        position="0 0 0"
+                        scale="0.05 0.05 0.05"
+                        gltf-model="url(models/mascot.glb)"
+                        animation="property: rotation; to: 0 360 0; loop: true; dur: 7000"
+                    ></a-entity>
+                </a-marker>
+                <a-entity camera></a-entity>
+            </a-scene>
+            <button class="close-ar" id="closeAR">
+                <i class="fas fa-times"></i>
+            </button>
+        </section>
+
+        <section class="ar-filters">
+            <div class="container">
+                <h2 class="section-title">AR Filters Gallery</h2>
+                <div class="filters-grid">
+                    <div class="filter-card hover-lift">
+                        <div class="filter-preview">
+                            <img src="images/filter-1.jpg" alt="AR Filter">
+                            <div class="filter-overlay">
+                                <button class="try-filter-btn">
+                                    <i class="fas fa-camera"></i>
+                                    Thử ngay
+                                </button>
+                            </div>
+                        </div>
+                        <div class="filter-info">
+                            <h3>Galaxy Dreams</h3>
+                            <p>1.2M lượt dùng</p>
+                        </div>
+                    </div>
+                    <div class="filter-card hover-lift">
+                        <div class="filter-preview">
+                            <img src="images/filter-2.jpg" alt="AR Filter">
+                            <div class="filter-overlay">
+                                <button class="try-filter-btn">
+                                    <i class="fas fa-camera"></i>
+                                    Thử ngay
+                                </button>
+                            </div>
+                        </div>
+                        <div class="filter-info">
+                            <h3>Neon Vibes</h3>
+                            <p>890K lượt dùng</p>
+                        </div>
+                    </div>
+                    <div class="filter-card hover-lift">
+                        <div class="filter-preview">
+                            <img src="images/filter-3.jpg" alt="AR Filter">
+                            <div class="filter-overlay">
+                                <button class="try-filter-btn">
+                                    <i class="fas fa-camera"></i>
+                                    Thử ngay
+                                </button>
+                            </div>
+                        </div>
+                        <div class="filter-info">
+                            <h3>Anime Style</h3>
+                            <p>2.1M lượt dùng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ar-games gradient-bg">
+            <div class="container">
+                <h2 class="section-title">AR Games</h2>
+                <div class="games-grid">
+                    <div class="game-card glass-effect">
+                        <div class="game-preview">
+                            <img src="images/game-1.jpg" alt="AR Game">
+                            <div class="game-overlay">
+                                <button class="play-game-btn">
+                                    <i class="fas fa-play"></i>
+                                    Chơi ngay
+                                </button>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3>AR Pokemon</h3>
+                            <div class="game-stats">
+                                <span><i class="fas fa-user"></i> 1.5M người chơi</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card glass-effect">
+                        <div class="game-preview">
+                            <img src="images/game-2.jpg" alt="AR Game">
+                            <div class="game-overlay">
+                                <button class="play-game-btn">
+                                    <i class="fas fa-play"></i>
+                                    Chơi ngay
+                                </button>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3>AR Racing</h3>
+                            <div class="game-stats">
+                                <span><i class="fas fa-user"></i> 980K người chơi</span>
+                                <span><i class="fas fa-star"></i> 4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ar-tutorial" id="tutorial">
+            <div class="container">
+                <h2 class="section-title gradient-text">Hướng dẫn sử dụng</h2>
+                <div class="tutorial-grid">
+                    <div class="tutorial-step glass-effect">
+                        <div class="step-number">1</div>
+                        <h3>Chuẩn bị</h3>
+                        <p>Cho phép truy cập camera và đảm bảo đủ ánh sáng</p>
+                    </div>
+                    <div class="tutorial-step glass-effect">
+                        <div class="step-number">2</div>
+                        <h3>Quét mã AR</h3>
+                        <p>Hướng camera vào mã AR marker để bắt đầu</p>
+                    </div>
+                    <div class="tutorial-step glass-effect">
+                        <div class="step-number">3</div>
+                        <h3>Tương tác</h3>
+                        <p>Tương tác với các đối tượng 3D xuất hiện</p>
+                    </div>
+                    <div class="tutorial-step glass-effect">
+                        <div class="step-number">4</div>
+                        <h3>Chia sẻ</h3>
+                        <p>Ghi lại và chia sẻ trải nghiệm của bạn</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ar-community">
+            <div class="container">
+                <h2 class="section-title">Cộng đồng AR</h2>
+                <div class="community-grid">
+                    <div class="community-post hover-lift glass-effect">
+                        <div class="post-header">
+                            <img src="images/user-1.jpg" alt="User" class="user-avatar">
+                            <div class="user-info">
+                                <h3>Nguyễn Văn A</h3>
+                                <span>2 giờ trước</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <img src="images/ar-post-1.jpg" alt="AR Post">
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 1.2K</span>
+                                <span><i class="fas fa-comment"></i> 234</span>
+                                <span><i class="fas fa-share"></i> 56</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="community-post hover-lift glass-effect">
+                        <div class="post-header">
+                            <img src="images/user-2.jpg" alt="User" class="user-avatar">
+                            <div class="user-info">
+                                <h3>Trần Thị B</h3>
+                                <span>5 giờ trước</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <img src="images/ar-post-2.jpg" alt="AR Post">
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 856</span>
+                                <span><i class="fas fa-comment"></i> 167</span>
+                                <span><i class="fas fa-share"></i> 42</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="download-section gradient-bg">
+            <div class="container">
+                <div class="download-content glass-effect">
+                    <h2>Tải ứng dụng AR</h2>
+                    <p>Trải nghiệm đầy đủ tính năng AR trên điện thoại của bạn</p>
+                    <div class="download-buttons">
+                        <a href="#" class="store-button hover-lift">
+                            <i class="fab fa-apple"></i>
+                            <div class="button-text">
+                                <span>Download on the</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="store-button hover-lift">
+                            <i class="fab fa-google-play"></i>
+                            <div class="button-text">
+                                <span>Get it on</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer gradient-bg">
+        <div class="footer-content">
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Về chúng tôi</h3>
+                <p>Digital Media Portal - Cổng thông tin truyền thông số hàng đầu Việt Nam</p>
+            </div>
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="privacy.html">Chính sách bảo mật</a></li>
+                    <li><a href="terms.html">Điều khoản sử dụng</a></li>
+                    <li><a href="advertise.html">Quảng cáo</a></li>
+                </ul>
+            </div>
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Kết nối với chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#" class="hover-lift"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Media Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/ar-entertainment.js"></script>
+</body>
+</html>

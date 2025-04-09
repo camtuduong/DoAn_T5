@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công nghệ - Digital Media Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/technology.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <span>Digital</span>Media
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="digital-content.html">Nội dung số</a></li>
+                <li><a href="social-trends.html">Xu hướng MXH</a></li>
+                <li><a href="technology.html"  class="active">Công nghệ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="technology-page">
+        <!-- Hero Section -->
+        <section class="tech-hero">
+            <div class="hero-content">
+                <h1>Khám phá thế giới công nghệ</h1>
+                <p>Cập nhật tin tức và xu hướng công nghệ mới nhất</p>
+            </div>
+        </section>
+
+        <!-- Tech Highlights -->
+        <section class="tech-highlights">
+            <h2>Xu hướng công nghệ</h2>
+            <div class="tech-grid">
+                <article class="tech-card featured">
+                    <div class="card-image">
+                        <img src="images/ai-trends.jpg" alt="AI Trends">
+                        <div class="card-tag">Hot</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Trí tuệ nhân tạo trong năm 2025</h3>
+                        <p>Khám phá những tiến bộ mới nhất trong lĩnh vực AI và ảnh hưởng của nó đến cuộc sống</p>
+                        <a href="#" class="read-more">Xem thêm</a>
+                    </div>
+                </article>
+                <div class="tech-sidebar">
+                    <article class="tech-card small">
+                        <img src="images/blockchain.jpg" alt="Blockchain">
+                        <div class="card-content">
+                            <h3>Blockchain và tương lai của tài chính số</h3>
+                            <a href="#" class="read-more">Xem thêm</a>
+                        </div>
+                    </article>
+                    <article class="tech-card small">
+                        <img src="images/iot.jpg" alt="IoT">
+                        <div class="card-content">
+                            <h3>Internet of Things và smart home</h3>
+                            <a href="#" class="read-more">Xem thêm</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Categories -->
+        <section class="tech-categories">
+            <h2>Danh mục công nghệ</h2>
+            <div class="categories-grid">
+                <div class="category-item">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Hardware</h3>
+                    <p>Review và so sánh các sản phẩm công nghệ mới</p>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-code"></i>
+                    <h3>Software</h3>
+                    <p>Phần mềm và ứng dụng mới nhất</p>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile</h3>
+                    <p>Tin tức về smartphone và tablet</p>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud</h3>
+                    <p>Điện toán đám mây và dịch vụ web</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech News -->
+        <section class="tech-news">
+            <h2>Tin tức công nghệ</h2>
+            <div class="news-container">
+                <div class="news-feed" id="newsFeed">
+                    <!-- Tin tức được load từ JS -->
+                </div>
+                <aside class="tech-sidebar">
+                    <div class="trending-tech">
+                        <h3>Xu hướng</h3>
+                        <ul class="trending-list" id="trendingList">
+                            <!-- Nội dung trending sẽ được load từ JS -->
+                        </ul>
+                    </div>
+                    <div class="tech-events">
+                        <h3>Sự kiện công nghệ</h3>
+                        <div class="events-list" id="eventsList">
+                            <!-- Nội dung sự kiện sẽ được load từ JS -->
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Tech Reviews -->
+        <section class="tech-reviews">
+            <h2>Đánh giá sản phẩm</h2>
+            <div class="reviews-slider" id="reviewsSlider">
+                <!-- Đánh giá sản phẩm được load từ JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về chúng tôi</h3>
+                <p>Digital Media Portal - Cổng thông tin truyền thông số hàng đầu Việt Nam</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="privacy.html">Chính sách bảo mật</a></li>
+                    <li><a href="terms.html">Điều khoản sử dụng</a></li>
+                    <li><a href="advertise.html">Quảng cáo</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết nối với chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Media Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/technology.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+/* Entertainment Page Styles */
+.entertainment-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/entertainment-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 60px;
+}
+
+.entertainment-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Content Slider */
+.content-slider {
+    position: relative;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider-item {
+    flex: 0 0 100%;
+    position: relative;
+    display: none;
+}
+
+.slider-item.active {
+    display: block;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.slider-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: var(--white);
+}
+
+.slider-prev,
+.slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: var(--white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.slider-prev {
+    left: 20px;
+}
+
+.slider-next {
+    right: 20px;
+}
+
+/* Entertainment Categories */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 5%;
+}
+
+.category-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.category-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-content {
+    padding: 1.5rem;
+    background: var(--white);
+}
+
+.category-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.category-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Reviews Section */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 5%;
+}
+
+.review-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.review-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.review-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.review-content {
+    padding: 1.5rem;
+}
+
+.rating {
+    color: #ffd700;
+    margin: 0.5rem 0;
+}
+
+.review-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.load-more {
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.load-more:hover {
+    background: var(--secondary-color);
+}
+
+/* Entertainment News Section */
+.news-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 2rem 5%;
+}
+
+.main-news {
+    display: grid;
+    gap: 2rem;
+}
+
+.news-sidebar {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.trending-now h3,
+.upcoming-events h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.trending-list {
+    list-style: none;
+}
+
+.trending-list li {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.events-list {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .entertainment-hero h1 {
+        font-size: 2rem;
+    }
+
+    .news-container {
+        grid-template-columns: 1fr;
+    }
+
+    .slider-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .entertainment-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slider-prev,
+    .slider-next {
+        width: 30px;
+        height: 30px;
+    }
+}

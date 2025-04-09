@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin tức - Digital Media Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2259ee;
+            --secondary-color: #2629d4;
+            --text-color: #333;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #666;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-menu li a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu li a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu li a:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* News Page */
+        .news-page {
+            padding-top: 80px;
+            background: var(--light-gray);
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: #fff;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-filters {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.8rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+            padding: 0 5% 4rem;
+        }
+
+        /* News Content */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-item {
+            background: #fff;
+            box-shadow: var(--shadow);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .news-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .news-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .news-text {
+            padding: 1.5rem;
+        }
+
+        .news-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .news-item:hover h3 {
+            color: var(--secondary-color);
+        }
+
+        .news-text p {
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            background-color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .pagination button {
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pagination button:hover {
+            background: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        .current-page {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-section {
+            background: #fff;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .sidebar-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .trending-list li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .trending-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .trending-list a {
+            display: block;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .trending-list a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            padding: 1rem;
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(34, 89, 238, 0.2);
+        }
+
+        .newsletter-form button {
+            padding: 1rem;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-section p {
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: #fff;
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                padding: 2rem 0;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <span>Digital</span>Media
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="digital-content.html">Nội dung số</a></li>
+                <li><a href="social-trends.html">Xu hướng MXH</a></li>
+                <li><a href="technology.html">Công nghệ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="news-page">
+        <section class="page-header">
+            <h1>Tin tức mới nhất</h1>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">Tất cả</button>
+                <button class="filter-btn" data-category="tech">Công nghệ</button>
+                <button class="filter-btn" data-category="entertainment">Giải trí</button>
+                <button class="filter-btn" data-category="social">Mạng xã hội</button>
+            </div>
+        </section>
+
+        <div class="main-content">
+            <section class="news-content">
+                <div class="news-grid" id="newsGrid">
+                    <!-- News items will be loaded dynamically -->
+                </div>
+                <div class="pagination">
+                    <button class="prev-page" id="prevPage"><i class="fas fa-chevron-left"></i></button>
+                    <span class="current-page" id="currentPage">1</span>
+                    <button class="next-page" id="nextPage"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <aside class="sidebar">
+                <div class="sidebar-section trending-section">
+                    <h3>Xu hướng</h3>
+                    <ul class="trending-list" id="trendingList">
+                        <!-- Trending items will be loaded dynamically -->
+                    </ul>
+                </div>
+                <div class="sidebar-section newsletter-signup">
+                    <h3>Đăng ký nhận tin</h3>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Email của bạn" required>
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về chúng tôi</h3>
+                <p>Digital Media Portal - Cổng thông tin truyền thông số hàng đầu Việt Nam</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="privacy.html">Chính sách bảo mật</a></li>
+                    <li><a href="terms.html">Điều khoản sử dụng</a></li>
+                    <li><a href="advertise.html">Quảng cáo</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết nối với chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Media Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            const newsGrid = document.getElementById('newsGrid');
+            const trendingList = document.getElementById('trendingList');
+            const newsletterForm = document.getElementById('newsletterForm');
+            const currentPage = document.getElementById('currentPage');
+            const prevPage = document.getElementById('prevPage');
+            const nextPage = document.getElementById('nextPage');
+            
+            // Toggle mobile menu
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Sample news data
+            const newsData = [
+                { 
+                    title: 'AI sẽ thống trị trong năm 2025', 
+                    img: 'images/ai-trends.jpg', 
+                    category: 'tech',
+                    excerpt: 'Công nghệ AI đang phát triển mạnh mẽ và dự kiến sẽ thay đổi nhiều ngành công nghiệp trong năm nay.'
+                },
+                { 
+                    title: 'Phim bom tấn đáng chờ đợi nhất 2025', 
+                    img: 'images/movies.jpg', 
+                    category: 'entertainment',
+                    excerpt: 'Danh sách những bộ phim Hollywood được mong đợi nhất sẽ ra mắt trong năm 2025.'
+                },
+                { 
+                    title: 'Tiktok và xu hướng viral mới nhất', 
+                    img: 'images/social.jpg', 
+                    category: 'social',
+                    excerpt: 'Tìm hiểu những xu hướng mới nhất đang làm mưa làm gió trên nền tảng TikTok hiện nay.'
+                },
+                { 
+                    title: 'Metaverse và tương lai của giải trí trực tuyến', 
+                    img: 'images/metaverse.jpg', 
+                    category: 'tech',
+                    excerpt: 'Khám phá cách Metaverse đang dần thay đổi cách chúng ta trải nghiệm giải trí trực tuyến.'
+                },
+                { 
+                    title: 'Top 10 nghệ sĩ Việt có lượng follow cao nhất', 
+                    img: 'images/artists.jpg', 
+                    category: 'entertainment',
+                    excerpt: 'Những nghệ sĩ Việt Nam đang sở hữu lượng người theo dõi khủng nhất trên các nền tảng mạng xã hội.'
+                },
+                { 
+                    title: 'Instagram ra mắt tính năng mới cho creators', 
+                    img: 'images/instagram.jpg', 
+                    category: 'social',
+                    excerpt: 'Instagram vừa cập nhật những tính năng mới hỗ trợ nhà sáng tạo nội dung xây dựng thương hiệu cá nhân.'
+                }
+            ];
+            
+            // Sample trending data
+            const trendingData = [
+                { title: 'AI trong Marketing: Cách ứng dụng hiệu quả', link: '#' },
+                { title: 'Blockchain và DeFi: Xu hướng tài chính mới', link: '#' },
+                { title: 'Metaverse và tương lai của không gian số', link: '#' },
+                { title: 'NFT: Nghệ thuật số và cơ hội đầu tư', link: '#' },
+                { title: 'Gen Z và thói quen tiêu dùng trực tuyến', link: '#' }
+            ];
+            
+            // Load trending items
+            function loadTrendingItems() {
+                trendingList.innerHTML = '';
+                trendingData.forEach(item => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${item.link}">${item.title}</a>`;
+                    trendingList.appendChild(li);
+                });
+            }
+            
+            // Load news based on category
+            function loadNews(category = 'all') {
+                newsGrid.innerHTML = '';
+                const filteredNews = category === 'all' 
+                    ? newsData 
+                    : newsData.filter(news => news.category === category);
+                
+                filteredNews.forEach(item => {
+                    const newsItem = document.createElement('article');
+                    newsItem.className = 'news-item';
+                    newsItem.innerHTML = `
+                        <img src="${item.img}" alt="${item.title}">
+                        <div class="news-text">
+                            <h3>${item.title}</h3>
+                            <p>${item.excerpt}</p>
+                            <a href="#" class="read-more">Xem thêm <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    `;
+                    newsGrid.appendChild(newsItem);
+                });
+            }
+            
+            // Pagination
+            let page = 1;
+            const updatePagination = () => {
+                currentPage.textContent = page;
+            };
+            
+            prevPage.addEventListener('click', () => {
+                if (page > 1) {
+                    page--;
+                    updatePagination();
+                    // In a real application, you would fetch new data here
+                }
+            });
+            
+            nextPage.addEventListener('click', () => {
+                page++;
+                updatePagination();
+                // In a real application, you would fetch new data here
+            });
+            
+            // Handle category filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelector('.filter-btn.active').classList.remove('active');
+                    btn.classList.add('active');
+                    loadNews(btn.dataset.category);
+                    page = 1;
+                    updatePagination();
+                });
+            });
+            
+            // Newsletter form submit
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('input[type="email"]').value;
+                
+                // Add a success message
+                const successMessage = document.createElement('div');
+                successMessage.style.padding = '10px';
+                successMessage.style.marginTop = '10px';
+                successMessage.style.backgroundColor = '#dff0d8';
+                successMessage.style.color = '#3c763d';
+                successMessage.style.borderRadius = '5px';
+                successMessage.textContent = `Cảm ơn bạn đã đăng ký! Email ${email} sẽ nhận được thông tin mới nhất.`;
+                
+                newsletterForm.appendChild(successMessage);
+                newsletterForm.reset();
+                
+                // Remove the message after 3 seconds
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 3000);
+            });
+            
+            // Initial load
+            loadTrendingItems();
+            loadNews();
+        });
+    </script>
+</body>
+</html>

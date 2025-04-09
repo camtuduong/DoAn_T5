@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Digital Media Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+
+    <header class="header glass-effect">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class="gradient-text">
+                    <span>Digital</span>Media
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="digital-content.html">Nội dung số</a></li>
+                <li><a href="social-trends.html">Xu hướng MXH</a></li>
+                <li><a href="technology.html">Công nghệ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="contact.html"  class="active">Liên hệ</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <section class="hero-section gradient-bg">
+            <div class="hero-content">
+                <h1 class="gradient-text fade-in-up">Liên hệ với chúng tôi</h1>
+                <p class="fade-in-up">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn</p>
+            </div>
+        </section>
+
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card glass-effect hover-lift">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Địa chỉ</h3>
+                        <p>123 Đường ABC, Quận XYZ<br>Thành phố Hồ Chí Minh</p>
+                    </div>
+                    <div class="info-card glass-effect hover-lift">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Điện thoại</h3>
+                        <p>+84 123 456 789<br>+84 987 654 321</p>
+                    </div>
+                    <div class="info-card glass-effect hover-lift">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>info@digitalmedia.com<br>support@digitalmedia.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="form-container glass-effect">
+                        <h2 class="gradient-text">Gửi tin nhắn cho chúng tôi</h2>
+                        <form id="contactForm" class="modern-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Họ và tên</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Email</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" required>
+                                <label for="phone">Số điện thoại</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="form-group">
+                                <select id="subject" name="subject" required>
+                                    <option value="">Chọn chủ đề</option>
+                                    <option value="support">Hỗ trợ kỹ thuật</option>
+                                    <option value="business">Hợp tác kinh doanh</option>
+                                    <option value="feedback">Góp ý</option>
+                                    <option value="other">Khác</option>
+                                </select>
+                                <div class="line"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" required></textarea>
+                                <label for="message">Nội dung tin nhắn</label>
+                                <div class="line"></div>
+                            </div>
+                            <button type="submit" class="modern-button ripple-button">
+                                Gửi tin nhắn
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="map-container glass-effect">
+                        <div id="map">
+                            <!-- Map will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title gradient-text">Câu hỏi thường gặp</h2>
+                <div class="faq-grid">
+                    <div class="faq-item glass-effect">
+                        <div class="faq-header">
+                            <h3>Làm thế nào để đăng ký tài khoản?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>Bạn có thể dễ dàng đăng ký tài khoản bằng cách nhấp vào nút "Đăng ký" ở góc phải trên cùng của trang web và làm theo hướng dẫn.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-effect">
+                        <div class="faq-header">
+                            <h3>Làm thế nào để đặt quảng cáo?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>Để đặt quảng cáo, vui lòng liên hệ với bộ phận kinh doanh của chúng tôi qua email: ads@digitalmedia.com</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-effect">
+                        <div class="faq-header">
+                            <h3>Làm thế nào để báo cáo lỗi?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>Bạn có thể báo cáo lỗi bằng cách sử dụng form liên hệ ở trên và chọn chủ đề "Hỗ trợ kỹ thuật".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-connect-section gradient-bg">
+            <div class="container">
+                <h2 class="section-title">Kết nối với chúng tôi</h2>
+                <div class="social-grid">
+                    <a href="#" class="social-card hover-lift">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-card hover-lift">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="social-card hover-lift">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-card hover-lift">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer gradient-bg">
+        <div class="footer-content">
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Về chúng tôi</h3>
+                <p>Digital Media Portal - Cổng thông tin truyền thông số hàng đầu Việt Nam</p>
+            </div>
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="privacy.html">Chính sách bảo mật</a></li>
+                    <li><a href="terms.html">Điều khoản sử dụng</a></li>
+                    <li><a href="advertise.html">Quảng cáo</a></li>
+                </ul>
+            </div>
+            <div class="footer-section fade-in-up">
+                <h3 class="gradient-text">Kết nối với chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#" class="hover-lift"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover-lift"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Media Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
