@@ -1,0 +1,25 @@
+{
+  "name": "doan_t5",
+  "version": "1.0.0",
+  "description": "Một trang web hiện đại về truyền thông trực tuyến, nội dung số và giải trí.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N17I09O02/DoAn_T5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/N17I09O02/DoAn_T5/issues"
+  },
+  "homepage": "https://github.com/N17I09O02/DoAn_T5#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
+}
